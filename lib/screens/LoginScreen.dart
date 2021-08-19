@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../components/GreenButton.dart';
+
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -48,33 +50,11 @@ class LoginScreen extends StatelessWidget {
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 30),
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                        Color(0xFF00FF5F),
-                      ),
-                      padding: MaterialStateProperty.all(
-                        EdgeInsets.symmetric(
-                          horizontal: 40,
-                          vertical: 20,
-                        ),
-                      ),
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0),
-                        ),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: Text(
-                      'Entrar',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: 'Roboto',
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                  child: GreenButton(
+                    text: 'Entrar',
+                    onPress: () {
+                      print('testando');
+                    },
                   ),
                 ),
                 Container(
