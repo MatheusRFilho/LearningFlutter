@@ -1,30 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 import '../components/GreenButton.dart';
 
 class LoginScreen extends StatelessWidget {
+  final passwordValidator = MultiValidator([
+    RequiredValidator(
+      errorText: 'Senha é obrigatório',
+    ),
+    MinLengthValidator(
+      8,
+      errorText: 'Senhas precisam ter 8 ou mais caracteres',
+    ),
+  ]);
+
+  final emailValidator = MultiValidator([
+    RequiredValidator(
+      errorText: 'Email é obrigatório',
+    ),
+    EmailValidator(errorText: 'Email Inválido'),
+  ]);
+
   @override
   Widget build(BuildContext context) {
-    double height_variable = MediaQuery.of(context).size.height;
-    double width_variable = MediaQuery.of(context).size.width;
+    double heightVariable = MediaQuery.of(context).size.height;
+    double widthVariable = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
           child: SizedBox(
-            height: height_variable,
+            height: heightVariable,
             child: Column(
               children: [
                 Container(
-                  height: height_variable / 6.5,
-                  margin: EdgeInsets.only(top: height_variable / 5.5),
+                  height: heightVariable / 6.5,
+                  margin: EdgeInsets.only(top: heightVariable / 5.5),
                   child: Image(
                     image: AssetImage('assets/images/Logo.png'),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.fromLTRB(25, height_variable / 7, 25, 0),
-                  child: TextField(
+                  margin: EdgeInsets.fromLTRB(25, heightVariable / 7, 25, 0),
+                  child: TextFormField(
+                    validator: emailValidator,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -37,7 +56,8 @@ class LoginScreen extends StatelessWidget {
                 ),
                 Container(
                   margin: EdgeInsets.fromLTRB(25, 20, 25, 0),
-                  child: TextField(
+                  child: TextFormField(
+                    validator: passwordValidator,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -46,6 +66,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                       hintText: 'Senha',
                     ),
+                    obscureText: true,
                   ),
                 ),
                 Container(
@@ -58,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: height_variable / 6),
+                  margin: EdgeInsets.only(top: heightVariable / 6),
                   child: Text(
                     'Ainda não possui uma conta?',
                     style: TextStyle(
