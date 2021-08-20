@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:get/get.dart';
 
 import '../components/GreenButton.dart';
 
@@ -26,6 +27,7 @@ class LoginScreen extends StatelessWidget {
     double heightVariable = MediaQuery.of(context).size.height;
     double widthVariable = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Color(0xFF2E3746),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
@@ -97,7 +99,9 @@ class LoginScreen extends StatelessWidget {
                         EdgeInsets.all(0),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed('/sign-up');
+                    },
                     child: Text(
                       'Cadastre-se já',
                       style: TextStyle(

@@ -1,21 +1,26 @@
-import 'package:app_mobile/screens/LoginScreen.dart';
+import 'package:app_mobile/screens/RegisterScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-void main() {
-  runApp(HomeApp());
-}
+import 'package:app_mobile/screens/LoginScreen.dart';
 
-class HomeApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Devnology',
+void main() => runApp(GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Colors.white,
-        scaffoldBackgroundColor: Color(0xFF2E3746),
-      ),
-      home: LoginScreen(),
-    );
-  }
-}
+      initialRoute: '/',
+      defaultTransition: Transition.native,
+      locale: Locale('pt', 'BR'),
+      getPages: [
+        GetPage(
+          name: "/",
+          page: () => LoginScreen(),
+        ),
+        GetPage(
+          name: '/sign-up',
+          page: () => RegisterScreen(),
+        ),
+        // GetPage(
+        //     name: '/categoria/:tipo',
+        //     page: () => CategoriaPage(),
+        //     binding: CategoriaBind())
+      ],
+    ));
