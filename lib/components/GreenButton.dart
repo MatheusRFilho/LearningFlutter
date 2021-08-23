@@ -1,3 +1,4 @@
+import 'package:app_mobile/Utils/Colors.dart';
 import 'package:flutter/material.dart';
 
 class GreenButton extends StatelessWidget {
@@ -11,7 +12,7 @@ class GreenButton extends StatelessWidget {
     return ElevatedButton(
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(
-          Color(0xFF00FF5F),
+          ColorConstants.neonGreen,
         ),
         padding: MaterialStateProperty.all(
           EdgeInsets.symmetric(

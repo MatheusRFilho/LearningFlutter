@@ -1,3 +1,4 @@
+import 'package:app_mobile/Utils/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
@@ -55,7 +56,7 @@ class RegisterScreen extends StatelessWidget {
                       fontFamily: 'Roboto',
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
-                      color: Color(0xFF8B8B8B),
+                      color: ColorConstants.ligthGrey,
                     ),
                   ),
                 ),
@@ -63,7 +64,7 @@ class RegisterScreen extends StatelessWidget {
               Container(
                 margin: EdgeInsets.fromLTRB(25, 50, 25, 0),
                 decoration: BoxDecoration(
-                  color: Color(0xFFF0F0F0),
+                  color: ColorConstants.ice,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: TextFormField(
@@ -82,7 +83,7 @@ class RegisterScreen extends StatelessWidget {
               Container(
                 margin: EdgeInsets.fromLTRB(25, 20, 25, 0),
                 decoration: BoxDecoration(
-                  color: Color(0xFFF0F0F0),
+                  color: ColorConstants.ice,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: TextFormField(
@@ -102,7 +103,7 @@ class RegisterScreen extends StatelessWidget {
               Container(
                 margin: EdgeInsets.fromLTRB(25, 20, 25, 0),
                 decoration: BoxDecoration(
-                  color: Color(0xFFF0F0F0),
+                  color: ColorConstants.ice,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: TextFormField(
